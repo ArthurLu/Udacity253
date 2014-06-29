@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="final_header">{{ page_name }}</h2>
+<div class="content_cont">
+  <p class="content">{{ page_content.replace('\n', '<br>') | safe }}</p>
+</div>
+{% if login %}
+  <div class="link_cont">
+    <p class="link">{{ username }}</p>
+    <a class="link" href="/final/logout">LogOut</a>
+    <a href={{ "/final/_history/%s" % page_name }} class="link">History</a>
+    <a class="link" href={{ "/final/_edit/%s?v=%s" % (page_name, v)}}>Edit</a>
+  </div>
+{% else %}
+  <div class="link_cont">
+    <a class="link" href="/final/signup">Signup</a>
+    <a class="link" href="/final/login">LogIn</a>
+  </div>
+{% endif %}
+
+{% endblock %}

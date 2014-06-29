@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="hw3_post_cont">
+  <div class="hw3_post_header">
+    <h3 class="hw3_post_title">{{p.title}}</h3>
+    <p class="hw3_post_time">{{p.created_time.strftime("%A %d/%m/%y")}}</p>
+  </div>
+  <div class="hw3_post_content">{{p.content.replace('\n', '<br>') | safe}}</div>
+</div>
+<p id="time">Queried {{execution_time}} seconds ago</p>
+{% endblock %}

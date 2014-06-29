@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="final_header">{{ "History of " + page_name }}</h2>
+<ul class="history_cont">
+  {% for v, h in history %}
+    <li>
+      <div class="list_cont">
+        <span class="history_time">{{ h.created_time.strftime("%c") }}</span>
+        <span class="history_content">{{ h.content }}</span>
+        <div class="history_tool_cont">
+          <a class="history_tool" href={{ "/final/%s?v=%d" % (page_name, v)}}>View</a>
+          <a class="history_tool" href={{ "/final/_edit/%s?v=%d" % (page_name, v)}}>Edit</a>
+        </div>
+      </div>
+    </li>
+  {% endfor %}
+</ul>
+<div class="link_cont">
+  <p class="link">{{ username }}</p>
+  <a class="link" href="/final/logout">LogOut</a>
+</div>
+{% endblock %}

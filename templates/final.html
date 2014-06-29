@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="final_header">Welcome To My Simple Wiki.</h2>
+{% if login %}
+  <div class="link_cont">
+    <a class="link" href="/final/logout">LogOut</a>
+    <p class="link">{{ username }}</p>
+  </div>
+{% else %}
+  <div class="link_cont">
+    <a class="link" href="/final/signup">Signup</a>
+    <a class="link" href="/final/login">LogIn</a>
+  </div>
+{% endif %}
+{% endblock %}

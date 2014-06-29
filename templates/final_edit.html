@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="link_cont">
+  <p class="link">{{ username }}</p>
+</div>
+<form method="post">
+  <div class="hw3_form_content">
+    <p>
+      <label for="content">{{ page_name }}</label>
+    </p>
+    <textarea name="content" cols="100" rows="20">{{ content }}</textarea>
+  </div>
+  <div class="hw3_form_error">{{ error }}</div>
+  <input type="submit" value="Save">
+</form>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form method="post">
+  <div class="hw3_form_title">
+    <p>
+      <label for="title">Title</label>
+    </p>
+    <input type="text" name="subject" value="{{title}}">
+  </div>
+  <div class="hw3_form_content">
+    <p>
+      <label for="content">Content</label>
+    </p>
+    <textarea name="content" cols="100" rows="20">{{content}}</textarea>
+  </div>
+  <div class="hw3_form_error">{{error}}</div>
+  <input type="submit">
+</form>
+
+{% endblock %}
